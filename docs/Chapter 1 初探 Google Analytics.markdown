@@ -43,5 +43,5 @@ https://support.google.com/analytics/answer/3123662?vid=0-635765822098027433-119
   
 ###與我聯絡
 ***
-> * 部落格：fsdsdfsd  
-> * Faacebook: fsdfsdfsdfsd
+> * 部落格：[我，傑夫。開發人](https://jeffprogrammer.wordpress.com/)  
+> * Email ：[jeff.juan@chihche.com](mailto:jeff.juan@chihche.com)
