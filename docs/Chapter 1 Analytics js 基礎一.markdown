@@ -1,4 +1,4 @@
-##第二天：Analytics.js 基礎
+##第二章：Analytics.js 基礎(一)
 
 
 Universal Analytics Web Tracking (analytics.js)採用非同步的方式採集使用者操弄網頁的行為。  
@@ -13,11 +13,11 @@ Universal Analytics Web Tracking (analytics.js)採用非同步的方式採集使
 	    ga('send', 'pageview');  
 	< /script >
 
-要使用 analytics.js 函式庫來測量使用者和你的網頁之間的互動，請在你的網頁</head>之前貼上面的程式碼。  
+想要使用 analytics.js 函式庫紀錄使用者和你的網頁之間的互動，請在你的網頁</head>之前貼上以上的程式碼。  
 
-__這一段程式碼做甚麼事？__當用戶開啟你的網頁，這段程式碼會非同步下載 analytics.js，創建一個名為 ga 的全域方法，利用 ga() 創建一個追蹤物件(以下稱 tracker )，tracker 的作用是採集、儲存用戶的使用行為在 tracker 物件。目前，這段程式碼只會送出 pageview 給 Google Analytics 。
+__這一段程式碼做甚麼事？__當用戶開啟你的網頁，這段程式碼會非同步下載 analytics.js，創建一個名為 ga 的全域方法，利用 ga() 創建一個追蹤物件，以下稱 tracker 。 tracker 的作用是把用戶的使用行為儲存在 tracker 物件。目前，這段程式碼只會送出 pageview 給 Google Analytics 。
 
-慢慢解釋程式碼的意思。首先你可以看到`function(i,s,o,g,r,a,m)`有參數代碼`i,s,o,g,r,a,m`。Google文件已經清楚解釋意思，如下所示：  
+接下來分段解釋程式碼的意思。首先你可以看到`function(i,s,o,g,r,a,m)`。參數代碼`i,s,o,g,r,a,m`在Google文件已經清楚解釋意思，如下所示：  
 
 	@param {Window}      i The global context object.  
 	@param {Document}    s The DOM document object.  
@@ -28,7 +28,7 @@ __這一段程式碼做甚麼事？__當用戶開啟你的網頁，這段程式�
 	@param {DOMElement?} m First script tag in document.  
   
 
- `i['GoogleAnalyticsObject'] = r;` 這段碼使我們可以變更analytics物件的名稱。  
+ `i['GoogleAnalyticsObject'] = r;` 這段碼讓我們可以變更 analytics 物件的名稱。  
 
 `i[r] = i[r] || function() {(i[r].q = i[r].q || []).push(arguments)},` 創建ga()方法。  
 
@@ -41,7 +41,7 @@ __這一段程式碼做甚麼事？__當用戶開啟你的網頁，這段程式�
 ###ga()的作用  
 
 
-`ga( )`是 analytics.js 提供的單一存取介面，讓我們只能透過 ga() 來操弄 analytics.js。這樣的程式架構很像設計模式中的「命令模式」，你只要輸入參數(命令)，不需知道 analytics.js 如何執行。" ga "這個名稱是可以自訂的，你可以改為其他你想要的名稱，例如 myTracker。在以下這段程式碼修改：  
+`ga( )`是 analytics.js 提供的單一存取介面，我們只能透過 ga() 來操弄 analytics.js。這樣的程式架構很像設計模式中的「命令模式」，你只要輸入參數(命令)，不需知道 analytics.js 如何執行。" ga "這個名稱可以自訂，你可以改為其他你想要的名稱，例如改為 myTracker，在以下程式碼修改：  
 
 `(window,document,'script','//www.google-analytics.com/analytics.js','myTracker');`
 ###create
@@ -65,7 +65,7 @@ ga('`send`', 'pageview'); 是呼叫 send 方法，向 Google Analytics 遞交儲
 	ga('send', 'event', 'imageA', 'clicked');  //圖片A點擊事件
 	ga('send', 'event', 'imageB', 'clicked');  //圖片B點擊事件
 ###push function
-有時候你想在analytics.js下載完成後做一些事情，你可以把方法當參數傳給ga()，像是 C# 的委派 (delegate)。以下程式碼會在analytics.js下載完成後，跳出視窗。  
+有時候你想在 analytics.js 下載完成後做一些事情，你可以把方法當參數傳給 ga()，像是 C# 的委派 (delegate)。以下程式碼會在 analytics.js 下載完成後，跳出視窗。  
 
 	ga(function() {
  	   alert('library done loading');
