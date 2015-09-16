@@ -1,4 +1,4 @@
-##第二章：Analytics.js 基礎(一)
+##第一章：Analytics.js 基礎(一)
 
 
 Universal Analytics Web Tracking (analytics.js)採用非同步的方式採集使用者操弄網頁的行為。  
@@ -127,10 +127,6 @@ ga('`send`', 'pageview'); 是呼叫 send 方法，向 Google Analytics 遞交儲
  	        window[disableStr] = true;
 	    }
 	< /script >
-今日小結
--------
-
-`ga( )`是analytics.js提供的單一存取介面，讓我們透過ga()來操弄 analytics.js 
 
 
 參考連結

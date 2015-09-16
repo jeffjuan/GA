@@ -1,4 +1,4 @@
-##第三章：Analytics.js 基礎 (二)
+##第二章：Analytics.js 基礎 (二)
 
 ###第一節 自訂維度 ( Dimensions ) 和指標 ( Matrics )
 這一節說明如何透過 Google Analytics 為自己網站定義與收集特殊的資料。要使用自定義的維度或指標，必須先在 Google Analytics 網站設定維度或指標定義，然後在自己的網站加上 Analytics.js 的設定。 
